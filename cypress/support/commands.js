@@ -27,4 +27,15 @@
 //for auto intellisense suggestions add below lines.
 ///  <reference types = "Cypress"/>
 /// <reference types = "@cypress/xpath"/>
+require('cypress-iframe')
+
+//This is custom function to handle iframes.
+Cypress.Commands.add('getIframe',(iframe)=>{
+    return cy.get(iframe)
+            .its('0.contentDocument.body')
+            .should('be.visible')
+            .then(cy.wrap);
+
+})
+
  
