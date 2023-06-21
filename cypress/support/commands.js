@@ -28,6 +28,7 @@
 ///  <reference types = "Cypress"/>
 /// <reference types = "@cypress/xpath"/>
 require('cypress-iframe')
+require('@4tw/cypress-drag-drop')
 
 //This is custom function to handle iframes.
 Cypress.Commands.add('getIframe',(iframe)=>{
